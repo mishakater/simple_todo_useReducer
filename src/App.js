@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
+import WithReduser from "./WithReduser";
+import NoReducer from "./NoReducer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Routes>
+        <Route path='/withreducer' element={<WithReduser />} />
+        <Route path='/noreducer' element={<NoReducer />} />
+        <Route path='*' element={<NoReducer />} />
+      </Routes>
     </div>
   );
 }
